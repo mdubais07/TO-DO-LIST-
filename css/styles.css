@@ -1,0 +1,138 @@
+
+:root{
+    --bg:#f6f7fb;
+    --card:#ffffff;
+    --primary:#2b7a78;
+    --primary-600:#236a69;
+    --accent:#ffb4a2;
+    --danger:#e14b4b;
+    --muted:#6b7280;
+    --radius:12px;
+    --gap:12px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+    margin:0;
+    font-family: Inter,ui-sans-serif,system-ui,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+    background:linear-gradient(180deg,var(--bg),#eef2f6);
+    color:#0f172a;
+    -webkit-font-smoothing:antialiased;
+    -moz-osx-font-smoothing:grayscale;
+}
+
+.container{
+    max-width:720px;
+    margin:48px auto;
+    background:var(--card);
+    padding:24px;
+    border-radius:var(--radius);
+    box-shadow:0 6px 20px rgba(15,23,42,0.08);
+}
+
+h1{
+    margin:0 0 16px 0;
+    font-size:1.5rem;
+    text-align:center;
+}
+
+
+
+.input-row{
+    display:flex;
+    gap:var(--gap);
+    margin-bottom:16px;
+}
+
+input[type="text"]{
+    flex:1 1 auto;
+    padding:12px 14px;
+    border:1px solid #e6e9ee;
+    border-radius:10px;
+    font-size:0.95rem;
+    outline:none;
+    transition:box-shadow .15s, border-color .15s;
+}
+
+input[type="text"]:focus{
+    border-color:var(--primary);
+    box-shadow:0 4px 16px rgba(43,122,120,0.08);
+}
+
+button#add-task-btn{
+    background:var(--primary);
+    color:#fff;
+    border:none;
+    padding:0 18px;
+    border-radius:10px;
+    font-weight:600;
+    cursor:pointer;
+    min-width:120px;
+}
+
+button#add-task-btn:hover{
+    background:var(--primary-600)
+}
+
+ul#task-list{
+    list-style:none;
+    margin:0;
+    padding:0;
+    display:flex;
+    flex-direction:column;
+    gap:8px
+}
+
+li.task-item{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    padding:12px;
+    border-radius:10px;
+    background:linear-gradient(180deg,rgba(11,22,39,0.01),rgba(11,22,39,0.00));
+    border:1px solid #f1f4f7;
+}
+
+.task-text{
+    flex:1;
+    font-size:0.98rem;
+    color:#0b1227
+}
+
+.task-actions{display:flex;
+    gap:8px;
+    align-items:center
+}
+
+.btn-remove{
+    background:var(--danger);
+    color:#fff;
+    border:none;
+    padding:8px 12px;
+    border-radius:8px;
+    cursor:pointer
+}
+.btn-remove:hover{
+    filter:brightness(.95)
+}
+
+.task-completed .task-text{
+    opacity:.5;
+    text-decoration:line-through
+}
+
+@media (max-width:520px){
+
+    .container{
+        margin:20px;
+        padding:16px
+    }
+    button#add-task-btn{
+        min-width:72px;
+        padding:8px
+    }
+}
+
+
+
